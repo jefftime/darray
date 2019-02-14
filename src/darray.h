@@ -1,15 +1,14 @@
 #ifndef DARRAY_H
 #define DARRAY_H
 
-struct darray {
-  unsigned long len;
-  unsigned long cap;
-  unsigned char *ptr;
-};
+struct darray;
 
-int danew(struct darray *d, unsigned long cap);
+struct darray *danew(unsigned long cap);
 void dafree(struct darray *d);
+unsigned char *dapeel(struct darray *d);
 int dapush(struct darray *d, unsigned char byte);
 int dapushn(struct darray *d, unsigned long len, unsigned char *byte);
+unsigned long dalen(struct darray *d);
+unsigned char *daptr(struct darray *d);
 
 #endif

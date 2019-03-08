@@ -72,7 +72,7 @@ int dapushn(struct darray *d, unsigned long len, unsigned char *bytes) {
   while ((d->len + len) >= d->cap) {
     if (increase_mem(d)) return -1;
   }
-  memcpy(d->ptr, bytes, len);
+  memcpy(d->ptr + d->len, bytes, len);
   d->len += len;
   return 0;
 }

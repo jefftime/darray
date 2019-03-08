@@ -3,6 +3,8 @@
 
 struct darray;
 
+#define dapusht(d, t) dapushn(d, sizeof(t), &(t));
+
 struct darray *danew(unsigned long cap);
 void dafree(struct darray *d);
 unsigned char *dapeel(struct darray *d);
